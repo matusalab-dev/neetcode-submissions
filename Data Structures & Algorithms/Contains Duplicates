@@ -1,0 +1,17 @@
+var containsDuplicate = function (nums) {
+    // brute force approach will be 
+    //  to check the sum of each element to each other which will to O(n2)
+    // the better solution is
+    // to store the frequency of the elements in obj
+    // the el as a key where as the value count of their frequency
+    let seen = {};
+
+    for (let num of nums) {
+        // store by mapping el with frequency count '1': 2
+        seen[num] = (seen[num] ?? 0) + 1
+        // check if the count is > 1 if it's return true
+        if (seen[num] > 1) return true
+    }
+    return false
+
+};
